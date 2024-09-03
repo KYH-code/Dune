@@ -18,6 +18,16 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="display.h" />
+    <ClInclude Include="io.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="common.h" />
+    <ClCompile Include="display.c" />
+    <ClCompile Include="engine.c" />
+    <ClCompile Include="io.c" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
@@ -126,16 +136,6 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
   </ItemDefinitionGroup>
-  <ItemGroup>
-    <ClInclude Include="..\..\..\..\..\..\..\..\Downloads\dune 1.5_skeleton\common.h" />
-    <ClInclude Include="..\..\..\..\..\..\..\..\Downloads\dune 1.5_skeleton\display.h" />
-    <ClInclude Include="..\..\..\..\..\..\..\..\Downloads\dune 1.5_skeleton\io.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="..\..\..\..\..\..\..\..\Downloads\dune 1.5_skeleton\display.c" />
-    <ClCompile Include="..\..\..\..\..\..\..\..\Downloads\dune 1.5_skeleton\engine.c" />
-    <ClCompile Include="..\..\..\..\..\..\..\..\Downloads\dune 1.5_skeleton\io.c" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
