@@ -8,7 +8,8 @@
 - [Stack](https://github.com/KYH-code/readme_template?tab=readme-ov-file#stack-)
 - [Guide](https://github.com/KYH-code/readme_template?tab=readme-ov-file#guide-)
 
-## Team 🧑‍💼
+## Dev 🧑‍💼
+24학번 김윤현
 
 ## Stack 🔧
 ![Dart](https://img.shields.io/badge/Dart-0175C2?style=for-the-badge&logo=dart&logoColor=white)
