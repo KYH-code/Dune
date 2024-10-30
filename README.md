@@ -1,5 +1,5 @@
 # Dune 1.5
-{project description}
+2024학년도 2학기 고급프로그래밍 Dune1.5 프로젝트
 
 <br>
 
