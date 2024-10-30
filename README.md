@@ -17,7 +17,14 @@
     </td>
   </tr>
   <tr>
-    <td>24학번 김윤현</td>
+    <td align="center">24학번 김윤현</td>
+  </tr>
+  <tr>
+    <td align="center">
+      <a href="https://github.com/eoguddl">
+        <img src="https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=GitHub&logoColor=white" />
+      </a>
+    </td>
   </tr>
 </table>
 
