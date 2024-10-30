@@ -10,10 +10,21 @@
 
 ## Dev 🧑‍💼
 24학번 김윤현
+<table>
+  <th colspan="2">개발자</th>
+  <tr>
+    <td>
+      <img src="https://avatars.githubusercontent.com/u/92522544?v=4" style="width: 150px; height: 150px;">
+    </td>
+  </tr>
+  <tr>
+    <td>24학번 김윤현</td>
+  </tr>
+</table>
 
 ## Stack 🔧
-![Dart](https://img.shields.io/badge/Dart-0175C2?style=for-the-badge&logo=dart&logoColor=white)
-![Flutter](https://img.shields.io/badge/Flutter-02569B?style=for-the-badge&logo=flutter&logoColor=white)
+![C](https://img.shields.io/badge/C-00599C?logo=c&logoColor=white)
+![Visual Studio](https://custom-icon-badges.demolab.com/badge/Visual%20Studio-5C2D91.svg?&logo=visual-studio&logoColor=white)
 
 ## Guide 📢
 > [!IMPORTANT]   
