@@ -4,7 +4,7 @@
 <br>
 
 ## Index 📑
-- [Team](https://github.com/KYH-code/readme_template?tab=readme-ov-file#team-)
+- [Dev](https://github.com/KYH-code/readme_template?tab=readme-ov-file#Dev-)
 - [Stack](https://github.com/KYH-code/readme_template?tab=readme-ov-file#stack-)
 - [Guide](https://github.com/KYH-code/readme_template?tab=readme-ov-file#guide-)
 
