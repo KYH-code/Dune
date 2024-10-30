@@ -9,7 +9,6 @@
 - [Guide](https://github.com/KYH-code/readme_template?tab=readme-ov-file#guide-)
 
 ## Dev 🧑‍💼
-24학번 김윤현
 <table>
   <th colspan="2">MainTainer</th>
   <tr>
