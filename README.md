@@ -11,7 +11,7 @@
 ## Dev 🧑‍💼
 24학번 김윤현
 <table>
-  <th colspan="2">개발자</th>
+  <th colspan="2">MainTainer</th>
   <tr>
     <td>
       <img src="https://avatars.githubusercontent.com/u/92522544?v=4" style="width: 150px; height: 150px;">
