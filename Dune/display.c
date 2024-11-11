@@ -11,7 +11,13 @@
 // 출력할 내용들의 좌상단(topleft) 좌표
 const POSITION resource_pos = { 0, 0 };
 const POSITION map_pos = { 1, 0 };
-
+// 추가
+const POSITION status_outline_pos = { 1, MAP_WIDTH + 1 };
+const POSITION status_message_pos = { 2, MAP_WIDTH + 1 };
+const POSITION system_outline_pos = { MAP_HEIGHT, 1 };
+const POSITION system_message_pos = { MAP_HEIGHT, 1 };
+const POSITION command_outline_pos = { MAP_HEIGHT, MAP_WIDTH + 1 };
+const POSITION command_message_pos = { MAP_HEIGHT, MAP_WIDTH + 1 };
 
 char backbuf[MAP_HEIGHT][MAP_WIDTH] = { 0 };
 char frontbuf[MAP_HEIGHT][MAP_WIDTH] = { 0 };
@@ -88,14 +94,17 @@ void display_cursor(CURSOR cursor) {
 	printc(padd(map_pos, curr), ch, COLOR_CURSOR);
 }
 
+// 시스템 메세지
 void display_system_message() {
 
 }
 
+// 상태창
 void display_object_info() {
 
 }
 
+// 명령창
 void display_commands() {
 
 }

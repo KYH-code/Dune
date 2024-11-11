@@ -11,6 +11,10 @@ void outro(void);
 void cursor_move(DIRECTION dir);
 void sample_obj_move(void);
 POSITION sample_obj_next_position(void);
+// 추가
+void status_layout(void);
+void system_layout(void);
+void command_layout(void);
 
 
 /* ================= control =================== */
@@ -20,6 +24,9 @@ CURSOR cursor = { { 1, 1 }, {1, 1} };
 
 /* ================= game data =================== */
 char map[N_LAYER][MAP_HEIGHT][MAP_WIDTH] = { 0 };
+char status[MAP_HEIGHT][40] = { 0 };
+char sys_message_map[N_LAYER][SYSTEM_HEIGHT][MAP_WIDTH] = { 0 };
+char object_info_map[N_LAYER][SYSTEM_HEIGHT][COMMAND_WIDTH] = { 0 };
 
 RESOURCE resource = {
 	.spice = 0,
@@ -41,8 +48,12 @@ int main(void) {
 	srand((unsigned int)time(NULL));
 
 	init();
+	status_layout();
+	system_layout();
+	command_layout();
 	intro();
 	display(resource, map, cursor);
+
 
 	while (1) {
 		// loop 돌 때마다(즉, TICK==10ms마다) 키 입력 확인
@@ -108,6 +119,22 @@ void init(void) {
 
 	// object sample
 	map[1][obj.pos.row][obj.pos.column] = 'o';
+}
+
+void status_layout() {
+	for (int i = 1; i < MAP_HEIGHT - 1; i++) {
+		for (int j = MAP_WIDTH; j < 40; j++) {
+			if (i == 1 || i == MAP_HEIGHT - 1) { status[i][j] = '-'; }
+		}
+	}
+}
+
+void system_layout() {
+
+}
+
+void command_layout() {
+
 }
 
 // (가능하다면) 지정한 방향으로 커서 이동
