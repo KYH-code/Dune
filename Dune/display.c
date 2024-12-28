@@ -30,7 +30,6 @@ void display_system_message();
 void display_object_info();
 void display_commands();
 
-
 void display(
 	RESOURCE resource,
 	char map[N_LAYER][MAP_HEIGHT][MAP_WIDTH],
@@ -75,7 +74,58 @@ void display_map(char map[N_LAYER][MAP_HEIGHT][MAP_WIDTH]) {
 		for (int j = 0; j < MAP_WIDTH; j++) {
 			if (frontbuf[i][j] != backbuf[i][j]) {
 				POSITION pos = { i, j };
-				printc(padd(map_pos, pos), backbuf[i][j], COLOR_DEFAULT);
+				char ch = backbuf[i][j];
+
+                // background
+                if (backbuf[i][j] == ' ') {
+                    POSITION pos = { i, j };
+                    printc(padd(map_pos, pos), backbuf[i][j], COLOR_DEFAULT + 220);
+                }
+                // atreides_base
+                else if (backbuf[i][j] == 'B' && i > MAP_HEIGHT - (MAP_HEIGHT / 2)) {
+                    POSITION pos = { i, j };
+                    printc(padd(map_pos, pos), backbuf[i][j], COLOR_DEFAULT + 48);
+                }
+                // harkonnen_base
+                else if (backbuf[i][j] == 'B') {
+                    POSITION pos = { i, j };
+                    printc(padd(map_pos, pos), backbuf[i][j], COLOR_DEFAULT + 64);
+                }
+                // atreides_harvester
+                else if (backbuf[i][j] == 'H' && i > MAP_HEIGHT - (MAP_HEIGHT / 2)) {
+                    POSITION pos = { i, j };
+                    printc(padd(map_pos, pos), backbuf[i][j], COLOR_DEFAULT + 48);
+                }
+                // harkonnen_harvester
+                else if (backbuf[i][j] == 'H' && i < MAP_HEIGHT - (MAP_HEIGHT / 2)) {
+                    POSITION pos = { i, j };
+                    printc(padd(map_pos, pos), backbuf[i][j], COLOR_DEFAULT + 64);
+                }
+                // plate
+                else if (backbuf[i][j] == 'P') {
+                    POSITION pos = { i, j };
+                    printc(padd(map_pos, pos), backbuf[i][j], COLOR_DEFAULT);
+                }
+                // rock
+                else if (backbuf[i][j] == 'R') {
+                    POSITION pos = { i, j };
+                    printc(padd(map_pos, pos), backbuf[i][j], COLOR_DEFAULT + 128);
+                }
+                // spice
+                else if (backbuf[i][j] == '5' || backbuf[i][j] == '3') {
+                    POSITION pos = { i, j };
+                    printc(padd(map_pos, pos), backbuf[i][j], COLOR_DEFAULT + 32);
+                }
+                // sandworm
+                else if (backbuf[i][j] == 'W') {
+                    POSITION pos = { i, j };
+                    printc(padd(map_pos, pos), backbuf[i][j], COLOR_DEFAULT + 96);
+                }
+                else {
+                    POSITION pos = { i, j };
+                    printc(padd(map_pos, pos), backbuf[i][j], COLOR_DEFAULT);
+                }
+
 			}
 			frontbuf[i][j] = backbuf[i][j];
 		}
@@ -87,16 +137,66 @@ void display_cursor(CURSOR cursor) {
 	POSITION prev = cursor.previous;
 	POSITION curr = cursor.current;
 
-	char ch = frontbuf[prev.row][prev.column];
-	printc(padd(map_pos, prev), ch, COLOR_DEFAULT);
+    char ch = frontbuf[prev.row][prev.column];
 
-	ch = frontbuf[curr.row][curr.column];
-	printc(padd(map_pos, curr), ch, COLOR_CURSOR);
+    // background
+    if (frontbuf[prev.row][prev.column] == ' ') {
+        printc(padd(map_pos, prev), ch, COLOR_DEFAULT + 224);
+    }
+    // atreides_base
+    else if (frontbuf[prev.row][prev.column] == 'B' && prev.row > MAP_HEIGHT - (MAP_HEIGHT / 2)) {
+        printc(padd(map_pos, prev), ch, COLOR_DEFAULT + 15);
+    }
+    // harkonnen_base
+    else if (frontbuf[prev.row][prev.column] == 'B') {
+        printc(padd(map_pos, prev), ch, COLOR_DEFAULT + 64);
+    }
+    // atreides_harvester
+    else if (frontbuf[prev.row][prev.column] == 'H' && prev.row > MAP_HEIGHT - (MAP_HEIGHT / 2)) {
+        printc(padd(map_pos, prev), ch, COLOR_DEFAULT + 15);
+    }
+    // harkonnen_harvester
+    else if (frontbuf[prev.row][prev.column] == 'H') {
+        printc(padd(map_pos, prev), ch, COLOR_DEFAULT + 64);
+    }
+    // plate
+    else if (frontbuf[prev.row][prev.column] == 'P') {
+        printc(padd(map_pos, prev), ch, COLOR_DEFAULT);
+    }
+    // plate
+    else if (frontbuf[prev.row][prev.column] == 'R') {
+        printc(padd(map_pos, prev), ch, COLOR_DEFAULT + 128);
+    }
+    // spice
+    else if (frontbuf[prev.row][prev.column] == '5' || frontbuf[prev.row][prev.column] == '3') {
+        printc(padd(map_pos, prev), ch, COLOR_DEFAULT + 48);
+    }
+    // sandworm
+    else if (frontbuf[prev.row][prev.column] == 'W') {
+        printc(padd(map_pos, prev), ch, COLOR_DEFAULT + 96);
+    }
+    else {
+        printc(padd(map_pos, prev), ch, COLOR_DEFAULT);
+    }
+    ch = frontbuf[curr.row][curr.column];
+    printc(padd(map_pos, curr), ch, COLOR_CURSOR);
+
 }
 
 // 시스템 메세지
 void display_system_message() {
 
+}
+
+// subfunction of draw_status()
+void status_project(char src[MAP_HEIGHT][COMMAND_WIDTH], char dest[MAP_HEIGHT][COMMAND_WIDTH]) {
+    for (int i = 0; i < MAP_HEIGHT; i++) {
+        for (int j = 0; j < COMMAND_WIDTH; j++) {
+            if (src[i][j] >= 0) {
+                dest[i][j] = src[i][j];
+            }
+        }
+    }
 }
 
 // 상태창

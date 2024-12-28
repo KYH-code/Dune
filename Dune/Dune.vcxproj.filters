@@ -21,6 +21,9 @@
     <ClInclude Include="display.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
+    <ClInclude Include="component.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="common.h">
@@ -33,6 +36,9 @@
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="io.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="component.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>

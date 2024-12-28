@@ -19,11 +19,13 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="component.h" />
     <ClInclude Include="display.h" />
     <ClInclude Include="io.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="common.h" />
+    <ClCompile Include="component.c" />
     <ClCompile Include="display.c" />
     <ClCompile Include="engine.c" />
     <ClCompile Include="io.c" />
